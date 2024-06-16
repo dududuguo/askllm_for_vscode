@@ -1,6 +1,11 @@
 {
-  "name": "codeassistant",
-  "displayName": "codeassistant",
+  "name": "Ask-Localassistant",
+  "publisher": "zhihaoguo",
+  "reposiory": {
+    "type": "git",
+    "url": "https://github.com/dududuguo/askllm_for_vscode"
+  },
+  "displayName": "Ask-Localassistant",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,22 +15,22 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "llmcaller",
         "title": "ask llm"
       }
-    ],
-    "publishers": [
-      "dududguo"
-    ],
-    "reposiory": {
-      "type": "git",
-      "url": ""
-    }
+    ]
   },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/nikeedev/canvas-api-snippets/main/LICENSE"
+    }
+  ],
+  "icon": "assets/images/icon.webp",
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
