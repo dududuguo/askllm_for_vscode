@@ -1,0 +1,52 @@
+{
+  "name": "codeassistant",
+  "displayName": "codeassistant",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "llmcaller",
+        "title": "ask llm"
+      }
+    ],
+    "publishers": [
+      "dududguo"
+    ],
+    "reposiory": {
+      "type": "git",
+      "url": ""
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "list-options": "node ./list-options.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.2.11",
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "marked": "^13.0.0",
+    "requests": "^0.3.0",
+    "vsce": "^2.15.0"
+  }
+}
