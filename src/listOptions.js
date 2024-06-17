@@ -6,12 +6,26 @@ const path = require('path');
 
 // List the contents of a directory
 async function listDirectoryContents(directoryPath) {
+    let results = [];
+
+    async function recursiveRead(dir) {
+        const entries = await fs.promises.readdir(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                await recursiveRead(fullPath);
+            } else {
+                results.push(`${path.basename(dir)}:${entry.name}`);
+            }
+        }
+    }
+
     try {
-        const files = await fs.promises.readdir(directoryPath);
-        return files.map(file => ({ label: file })); 
+        await recursiveRead(directoryPath);
+        return results;
     } catch (error) {
         console.error('Error reading directory:', error);
-        return [];  
+        return [];
     }
 }
 

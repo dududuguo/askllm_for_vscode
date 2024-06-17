@@ -7,9 +7,9 @@
 
 ## Requirements
 
-- Only For Mac OS now!!!
-- Download [Ollama](https://ollama.com/download/Ollama-darwin.zip)
-- The local model needs download from [Ollama library](https://ollama.com/library)
+- Download for Mac [ollama](https://ollama.com/download/Ollama-darwin.zip) first.
+- Windows [ollama](https://ollama.com/download/OllamaSetup.exe)
+- The local model needs download from [ollama library](https://ollama.com/library)
 
 ```bash
 # example for llama3
@@ -28,7 +28,7 @@ ollama rm llama3    # remove llama3
 
 This project is suitable for coding without an internet connection, as most of the time we just forget an API or some function names. It can be frustrating when there's no internet access. This project simply integrates Ollama's API with VSCode to minimize the need to switch between applications. The model's responses will be temporarily stored in Markdown, and can be saved if necessary.
 
-* [Ollama](https://github.com/ollama/ollama)
+* [ollama](https://github.com/ollama/ollama)
 * [ollama-js](https://github.com/ollama/ollama-js)
 * [llama3](https://ollama.com/library/llama3)
 

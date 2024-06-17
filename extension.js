@@ -8,16 +8,16 @@ const vscode = require('vscode');
 function getOperatingSystem() {
 	const platform = process.platform;
 
-	if (platform === 'darwin') {
-		return 'Mac OS';
+	if (platform !== 'darwin') {
+		return true;
 	} else if (platform === 'linux') {
-		return 'Linux';
+		return true;
 	} else if (platform === 'freebsd') {
-		return 'FreeBSD';
+		return false;
 	} else if (platform === 'win32') {
-		return 'Windows';
+		return true;
 	} else {
-		return 'Unknown Operating System';
+		return false;
 	}
 }
 
@@ -31,7 +31,7 @@ function activate(context) {
 	const disposable = vscode.commands.registerCommand('llmcaller', async function () {
 		vscode.window.showInformationMessage('Hello! Input \'\>ask llm\' to start the conversation.');
 		// check if the operating system is Mac OS
-		if (getOperatingSystem() === 'Mac OS') {
+		if (getOperatingSystem()) {
 			if (!vscode.workspace.workspaceFolders) {
 				vscode.window.showErrorMessage("Please open a workspace to keep the chat history.");
 				return; 

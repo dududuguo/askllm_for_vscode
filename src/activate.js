@@ -23,7 +23,9 @@ async function onDidOpenTextDocument() {
         });
 
         if (userInput) {
-            const model = userInput.label;
+            console.log('userInput ', userInput);
+            const model = userInput;
+            console.log('Selected Model:', model);
             createPrompts(model);
         }
     } catch (error) {
@@ -60,7 +62,7 @@ async function callModel(model, prompts) {
         // add the response to the conversation history
         conversationHistory.push('Assistant: ' + answer_md);
 
-        const currentChat = "- "+chatTime +' __User__: ' + prompts + '\n' + responseTime + ' __Assistant__: ' + answer_md + '\n';
+        const currentChat = "- " + chatTime + ' __User__: ' + prompts + '\n' + "- " + responseTime + ' __Assistant__: ' + answer_md + '\n';
         console.log('message: ', { command: 'update', content: answer_md });
 
         editor.edit(editBuilder => {
