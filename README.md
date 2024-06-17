@@ -1,6 +1,8 @@
-# README
+## Getting Started
 
-## Features
+To install the askllm Extension [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=zhihaoguo.Ask-Localassistant)
+
+## Introduction
 
 - call local large language(LLM) model in [VSCode](https://code.visualstudio.com/)
 - support select code, context history as prompts to LLM.
