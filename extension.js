@@ -8,7 +8,7 @@ const vscode = require('vscode');
 function getOperatingSystem() {
 	const platform = process.platform;
 
-	if (platform !== 'darwin') {
+	if (platform === 'darwin') {
 		return true;
 	} else if (platform === 'linux') {
 		return true;
